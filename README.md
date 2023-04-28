@@ -48,4 +48,9 @@ Now, we need to secure, manage, and support our environment.
 - Deploy a Recovery Vault to enable backup for VMs. During the onboarding process, establish a backup policy to define how often backups should.
 
 
+Now, that you have an idea about this Design, you could design yours in another simpler way or more complex.
+
+Thank you.
+
+Let's keep learning and keep growing…
 
