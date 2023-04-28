@@ -7,7 +7,7 @@ The goal is to develop a highly available, secure, scalable, and cost-optimized 
 
 Below is the detailed design explanation. Please review it.
 
-Steps:
+## Steps:
 
 Establish Network Topology:
 - Instead of having all our resources on one virtual network, I have chosen to use the Hub & Spoke Topology, also known as the Star topology. I will explain the reasons soon.
