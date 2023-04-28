@@ -9,20 +9,20 @@ Below is the detailed design explanation. Please review it.
 
 ## Steps:
 
-### Establish Network Topology:
+#### Establish Network Topology:
 - Instead of having all our resources on one virtual network, I have chosen to use the Hub & Spoke Topology, also known as the Star topology. I will explain the reasons soon.
 - I have created several virtual networks and separated them into the Development and Production environments.
 - Additionally, I have created another Vnet, called Management environment, for shared services.
 - Vnet peering has been established to allow communication between the Development and Production environments.
 
 
-### Reasons for using Hub and Spoke topology:
+#### Reasons for using Hub and Spoke topology:
 - Network Isolation: This topology allows us to establish isolation between the different tiers. For example, resources in the Development environment cannot communicate with those in the Production environment. This prevents unintended changes and issues in the Production environment.
 - Separation of Concerns: By making changes in the Development environment first, we can ensure that we do not impact users accessing our production environment. Once the changes or updates are validated in the Development environment, we can then apply them to the Production environment with a good understanding of the outcome.
 - Compliance: This topology also takes into consideration various compliances such as HIPAA, HITRUST, and PCI.
 
 
-### Subnets and Network Access:
+#### Subnets and Network Access:
 - Create public and private Vnet subnets for each environment.
 - Assign network security groups (NSGs) to each subnet. This allows only the incoming ports and protocols required by the application into the subnets.
 - Establish connectivity from our on-premises data center to the Azure environment.
@@ -30,7 +30,7 @@ Below is the detailed design explanation. Please review it.
 - Set up an Azure Bastion as the main point of ingress to the Azure environment for the operating system layer. Extend connectivity by allowing a public IP and configuring another NSG on the NIC. Also, allow port 22 in the NSG, specifying the source IP of the Engineer/Admin, and add any additional subnets from the on-premises data center, if applicable.
 
 
-### Deployment:
+#### Deployment:
 - Deploy a set of Active Directory domain controllers to be used as an identity source. This will allow us to create user accounts for various engineers/admins and restrict access as necessary to various OS.
 - Deploy multiple domain controllers to ensure high availability.
 - Deploy Application Gateways, which are layer 7 load balancers that respond to HTTP/HTTPS requests.
