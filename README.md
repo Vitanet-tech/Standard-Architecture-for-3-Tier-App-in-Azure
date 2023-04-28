@@ -7,6 +7,8 @@ The goal is to develop a highly available, secure, scalable, and cost-optimized 
 
 Below is the detailed design explanation. Please review it.
 
+![A Standard Architecture for 3-Tier App in Azure](https://user-images.githubusercontent.com/99427790/235126768-ed3d720c-8c83-4ed9-853e-883f70e3d9fb.png)
+
 
 ## Steps:
 
